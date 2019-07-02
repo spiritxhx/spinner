@@ -1,11 +1,11 @@
-process.stdout.write('hello from spinner2.js... \rheyyy\n');
+//pair code with Robin
 
-// setTimeout(() => {
-//   process.stdout.write("\r\n   ");
-// }, 900);
-const inputArr = ['|', '/', '-', '\\'];
-for (let i = 0; i <= 4; i++) {
-  setTimeout(() => {
-    process.stdout.write(i === 4 ? `\r\n   ` : `\r${inputArr[i]}   `);
-  }, 100 + i * 200);
-}
+const spinnerArray = ['|', '/', '-', '\\', '|', '/', '-', '\\', '|'];
+const spinner = function (time, arr) {
+  for (let i = 0; i < arr.length; i++) {
+    setTimeout(() => {
+      process.stdout.write('\r' + arr[i] + ' ');
+    }, 100 + (i * time));
+  }
+};
+spinner(100, spinnerArray);
